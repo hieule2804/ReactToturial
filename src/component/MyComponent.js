@@ -11,7 +11,12 @@ class MyComponent extends React.Component {
         address: "Hn",
         age: 20
     };
-
+    handlerClick(event) {
+        // console.log("my name is the : ", this.state.name)
+    }
+    handleOnMouseOver(event) {
+        console.log(event);
+    }
     //quy dinh component nay se tra ra cai gi 
     render() {
         return (
@@ -20,6 +25,8 @@ class MyComponent extends React.Component {
                 My Name is :{this.state.name} and i'm from{this.state.address}<br></br>
                 {/* viet code logic,js trong {} */}
                 {Math.random()}
+                <button onClick={this.handlerClick}>Click Me</button>
+                <button onMouseOver={this.handleOnMouseOver}>Have Me</button>
             </div>
         );
     }
