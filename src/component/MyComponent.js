@@ -3,6 +3,7 @@
 
 import React from "react";
 import UserInfor from "./UserInfor";
+import DisplayInfor from "./DisplayInfor";
 
 class MyComponent extends React.Component {
 
@@ -14,6 +15,9 @@ class MyComponent extends React.Component {
             <div>
                 {/* goi component con */}
                 <UserInfor />
+                <br />
+                <DisplayInfor name="hlll" age={21} />
+                <hr />
             </div>
         );
     }
