@@ -24,6 +24,20 @@ class MyComponent extends React.Component {
     handleOnMouseOver(event) {
         console.log(event);
     }
+
+    handleOnChange = (event) => {
+        // console.log(event, event.target.value)
+
+        this.setState({
+            name: event.target.value
+        })
+    }
+    handleOnSubmit = (event) => {
+        //ngăn reload lại trang
+        event.preventDefault();
+        console.log(this.state.name)
+    }
+
     //quy dinh component nay se tra ra cai gi 
     render() {
         return (
@@ -33,8 +47,13 @@ class MyComponent extends React.Component {
                 {/* viet code logic,js trong {} */}
                 {Math.random()}
                 {/* chuyen qua dung arrow function */}
-                <button onClick={(event) => { this.handlerClick(event) }}>Click Me</button>
-                <button onMouseOver={this.handleOnMouseOver}>Have Me</button>
+                {/* <button onClick={(event) => { this.handlerClick(event) }}>Click Me</button> */}
+
+                <form onSubmit={(event) => this.handleOnSubmit(event)}>
+                    <input type="text" onChange={(event) => { this.handleOnChange(event) }}></input>
+                    <button >Submit</button>
+                </form>
+
             </div>
         );
     }
