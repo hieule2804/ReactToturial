@@ -23,21 +23,35 @@ class MyComponent extends React.Component {
         })
     }
 
+    handleDeleteUser = (userid) => {
+        let listUserClone = [...this.state.listUser];
+        listUserClone = listUserClone.filter(item => item.id !== userid)
+        this.setState({
+            listUser: listUserClone
+        })
+    }
     //quy dinh component nay se tra ra cai gi 
     render() {
+        // const test = { name: "hieu" }
         return (
             //JSX :chir đc 1 phan tu
-            <div>
-                {/* goi component con */}
-                <AddUserInfor
-                    handleAddNewUser={this.handleAddNewUser}
-                />
-                <br />
-                <DisplayInfor
-                    listUser={this.state.listUser}
-                />
-                <hr />
-            </div>
+            // react.fragment 
+            <>
+                {/* {JSON.stringify(test)} */}
+                <div className="a">
+                    {/* goi component con */}
+                    <AddUserInfor
+                        handleAddNewUser={this.handleAddNewUser}
+                    />
+                    <br />
+                    <DisplayInfor
+                        listUser={this.state.listUser}
+                        handleDeleteUser={this.handleDeleteUser}
+                    />
+                    <hr />
+                </div>
+                <div className="b"></div>
+            </>
         );
     }
 }
