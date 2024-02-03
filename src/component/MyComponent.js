@@ -7,6 +7,15 @@ import DisplayInfor from "./DisplayInfor";
 
 class MyComponent extends React.Component {
 
+    state = {
+        listUser: [
+            { id: 1, name: "hlll", age: 21 },
+            { id: 2, name: "Hee", age: 22 },
+            { id: 3, name: "Heeleee", age: 22 },
+
+        ]
+
+    }
 
     //quy dinh component nay se tra ra cai gi 
     render() {
@@ -16,7 +25,8 @@ class MyComponent extends React.Component {
                 {/* goi component con */}
                 <UserInfor />
                 <br />
-                <DisplayInfor name="hlll" age={21} />
+                <DisplayInfor
+                    listUser={this.state.listUser} />
                 <hr />
             </div>
         );
