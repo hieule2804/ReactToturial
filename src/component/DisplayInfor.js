@@ -82,6 +82,8 @@ import logo from "../logo.svg"
 
 //function component k co tu khoa this
 //tu khoa this chi ton tai trong class
+
+//funstion component
 const DisplayInfor = (props) => {
     const { listUser } = props;
     //useState trả 2 giá trị : tên state , hàm cập nhập state
