@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./DisplayInfor.scss";
 import logo from "../logo.svg"
 
@@ -84,17 +84,25 @@ import logo from "../logo.svg"
 //tu khoa this chi ton tai trong class
 const DisplayInfor = (props) => {
     const { listUser } = props;
-
-    //destructuring array/obj  : chỉ lấy ra n thuộc tính từ props
-
-    //const listUser = this.props.listUser
-    //props : viet tat properties
-    //dùng để truyền dữ liệu từ component cha sang con 
+    //useState trả 2 giá trị : tên state , hàm cập nhập state
+    //[tên state ,hàm cập nhập biến state]
+    const [isTheShowHideListUser, setShowHideListUser] = useState(true);
+    // tuong ung voi
+    // this.state = {
+    //     isTheShowHideListUser: true
+    // }
+    const handleShowHideListUser = () => {
+        setShowHideListUser(!isTheShowHideListUser)
+    }
     return (
         <div className="display-infor-container">
             {/* <img src={logo} /> */}
-
-            {true &&
+            <div>
+                <span onClick={() => { handleShowHideListUser() }}>
+                    {isTheShowHideListUser ? "Hide List User" : "Show ListUSer"}
+                </span>
+            </div>
+            {isTheShowHideListUser &&
                 <div>
                     {listUser.map((user) => {
 
