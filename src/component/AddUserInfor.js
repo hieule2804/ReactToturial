@@ -31,7 +31,6 @@ class AddUserInfor extends React.Component {
         });
     }
 
-
     render() {
         return (
             <div>
